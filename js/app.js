@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     maze: "569878",
     binari: "05012125",
     diference: "35573",
-    sequence: "741239"
+    sequence: "741239",
   };
 
   function verificarCodigos() {
