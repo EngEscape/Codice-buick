@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -55,9 +56,10 @@
 <body>
   <h1>Codice Buick</h1>
 
-    <div id="countdown" style="font-size: 20px; font-weight: bold; text-align: center; margin-bottom: 20px;">
-  Tiempo restante: 45:00
-</div>
+  <div id="countdown" style="font-size: 20px; font-weight: bold; text-align: center; margin-bottom: 20px;">
+    Tiempo restante: 45:00
+  </div>
+
   <div class="input-group">
     <label>Puzzle - Código de activación:</label><br>
     <input type="text" id="puzzle">
@@ -88,46 +90,10 @@
     <span id="icon-sequence" class="icon"></span>
   </div>
 
-  <button onclick="verificarCodigos()">Verificar</button>
+  <button id="verificarBtn">Verificar</button>
 
   <div id="result"></div>
 
-  <script>
-    const codigosCorrectos = {
-      puzzle: "351907",
-      maze: "569878",
-      binari: "05012125",
-      difference: "35573",
-      sequence: "741239",
-    };
-
-    function verificarCodigos() {
-      let todosCorrectos = true;
-
-      for (let key in codigosCorrectos) {
-        const input = document.getElementById(key);
-        const icon = document.getElementById("icon-" + key);
-        if (input.value.trim() === codigosCorrectos[key]) {
-          input.className = "correct";
-          icon.textContent = "✔️";
-          icon.className = "icon success";
-        } else {
-          input.className = "incorrect";
-          icon.textContent = "❌";
-          icon.className = "icon error";
-          todosCorrectos = false;
-        }
-      }
-
-      const result = document.getElementById("result");
-      if (todosCorrectos) {
-        result.textContent = "✅ CODICE liberado. Clave de AURORA es 18061956.";
-        result.style.color = "green";
-      } else {
-        result.textContent = "❌ Algunos códigos son incorrectos. Intenta de nuevo.";
-        result.style.color = "red";
-      }
-    }
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
