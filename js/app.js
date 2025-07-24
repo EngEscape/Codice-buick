@@ -37,4 +37,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const button = document.querySelector("button");
   button.addEventListener("click", verificarCodigos);
+
+
+let totalSeconds = 45 * 60;
+const countdownElement = document.getElementById("countdown");
+
+function updateCountdown() {
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  countdownElement.textContent = `Tiempo restante: ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  if (totalSeconds > 0) {
+    totalSeconds--;
+  } else {
+    clearInterval(timer);
+    countdownElement.textContent = "⏰ Tiempo finalizado";
+  }
+}
+
+const timer = setInterval(updateCountdown, 1000);
+
+  
 });
