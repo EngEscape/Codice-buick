@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     puzzle: "351907",
     maze: "569878",
     binari: "05012125",
-    diference: "35573",
+    difference: "35573",
     sequence: "741239",
   };
 
