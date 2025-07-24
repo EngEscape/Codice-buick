@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codice Buick</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .correct {
+      border: 2px solid green;
+      background-color: #e0ffe0;
+    }
+    .incorrect {
+      border: 2px solid red;
+      background-color: #ffe0e0;
+    }
+    .icon {
+      font-size: 20px;
+      margin-left: 10px;
+    }
+    .success {
+      color: green;
+    }
+    .error {
+      color: red;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Codice Buick</h1>
+
+  <div class="input-group">
+    <label>Puzzle - Código de activación:</label><br>
+    <input type="text" id="puzzle">
+    <span id="icon-puzzle" class="icon"></span>
+  </div>
+
+  <div class="input-group">
+    <label>Maze - Código de activación:</label><br>
+    <input type="text" id="maze">
+    <span id="icon-maze" class="icon"></span>
+  </div>
+
+  <div class="input-group">
+    <label>Binari - Código de activación:</label><br>
+    <input type="text" id="binari">
+    <span id="icon-binari" class="icon"></span>
+  </div>
+
+  <div class="input-group">
+    <label>Sequence - Código de activación:</label><br>
+    <input type="text" id="sequence">
+    <span id="icon-sequence" class="icon"></span>
+  </div>
+
+  <div class="input-group">
+    <label>Codice - Código de activación:</label><br>
+    <input type="text" id="codice">
+    <span id="icon-codice" class="icon"></span>
+  </div>
+
+  <button onclick="verificarCodigos()">Verificar</button>
+
+  <div id="result"></div>
+
+  <script>
+    const codigosCorrectos = {
+      puzzle: "351907",
+      maze: "569878",
+      binari: "05012125",
+      sequence: "741239",
+      codice: "liberado"
+    };
+
+    function verificarCodigos() {
+      let todosCorrectos = true;
+
+      for (let key in codigosCorrectos) {
+        const input = document.getElementById(key);
+        const icon = document.getElementById("icon-" + key);
+        if (input.value.trim() === codigosCorrectos[key]) {
+          input.className = "correct";
+          icon.textContent = "✔️";
+          icon.className = "icon success";
+        } else {
+          input.className = "incorrect";
+          icon.textContent = "❌";
+          icon.className = "icon error";
+          todosCorrectos = false;
+        }
+      }
+
+      const result = document.getElementById("result");
+      if (todosCorrectos) {
+        result.textContent = "✅ CODICE liberado. Clave de AURORA es 18061956.";
+        result.style.color = "green";
+      } else {
+        result.textContent = "❌ Algunos códigos son incorrectos. Intenta de nuevo.";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
