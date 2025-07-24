@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     puzzle: "351907",
     maze: "569878",
     binari: "05012125",
-    sequence: "741239",
-    codice: "liberado"
+    diference: "35573",
+    sequence: "741239"
   };
 
   function verificarCodigos() {
