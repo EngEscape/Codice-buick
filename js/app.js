@@ -2,8 +2,8 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   const codigosCorrectos = {
-    puzzle: "351907",
-    maze: "569878",
+    puzzle: "709153",
+    maze: "4391516",
     binari: "05012125",
     difference: "35573",
     sequence: "741239",
